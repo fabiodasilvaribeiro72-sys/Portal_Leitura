@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Cliente</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: 0, transform: 'translateY(10px)' },
+                  '100%': { opacity: 1, transform: 'translateY(0)' }
+                }
+              },
+              animation: {
+                fadeIn: 'fadeIn 0.5s ease-out'
+              }
+            }
+          }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+
+<header class="bg-white shadow-md p-4 flex justify-between items-center">
+
+    <div class="text-xl font-bold">
+        Portal<span class="text-blue-600">Leitura</span>
+    </div>
+
+    <div class="flex gap-2">
+        <input type="text" placeholder="Buscar Pedido..."
+               class="border rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+            🔍
+        </button>
+    </div>
+
+    <nav>
+        <ul class="flex gap-4 items-center text-sm">
+            <li class="cursor-pointer hover:text-blue-600">Meus Dados</li>
+            <li class="cursor-pointer hover:text-blue-600">Endereço</li>
+            <li>
+                <a href="/Meuspedidos.html" class="cursor-pointer hover:text-blue-600">Pedidos</li></a>
+            <li class="font-semibold">👤 <span id="nome">Carregando...</span></li>
+            <li>
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" onclick="logout()">
+                    Sair
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<div class="max-w-4xl mx-auto mt-6 bg-white p-6 rounded-lg shadow animate-fadeIn">
+
+    <h2 class="text-xl font-bold mb-2">Seu Carrinho</h2>
+    <div id="listaPedidos" class="mb-4"></div>
+
+    <hr class="my-4">
+
+
+    <h2 class="text-xl font-bold mb-2">Endereço de Entrega</h2>
+    <select id="enderecos" class="w-full border p-2 rounded mb-4"></select>
+
+    <h3 class="font-semibold mb-2">Informar Endereço</h3>
+
+    <div class="grid grid-cols-2 gap-3">
+        <input class="border p-2 rounded" type="text" id="cep" placeholder="CEP">
+        <input class="border p-2 rounded" type="text" id="rua" placeholder="Rua">
+        <input class="border p-2 rounded" type="text" id="cidade" placeholder="Cidade">
+        <input class="border p-2 rounded" type="text" id="estado" placeholder="Estado">
+    </div>
+
+    <button class="mt-3 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            onclick="adicionarEndereco()">
+        Adicionar Endereço
+    </button>
+
+    <hr class="my-4">
+
+    <!-- CARTÃO -->
+    <h2 class="text-xl font-bold mb-2">Cartões</h2>
+
+
+    <div id="cartoesContainer"></div>
+
+
+    <div id="totalPagamento"
+         class="font-bold text-lg mt-4 text-blue-700">
+    </div>
+
+    <div id="pagamentosCartoes"></div>
+    <p id="erroPagamento" class="text-red-500 text-sm"></p>
+
+    <h3 class="font-semibold mt-4">Adicionar Cartão</h3>
+
+    <div class="grid grid-cols-2 gap-3 mt-2">
+        <input class="border p-2 rounded" type="text" id="numero" placeholder="Número do Cartão">
+        <input class="border p-2 rounded" type="text" id="nomeImpresso" placeholder="Nome no Cartão">
+        <input class="border p-2 rounded" type="text" id="bandeira" placeholder="Bandeira">
+        <input class="border p-2 rounded" type="text" id="codigoSeguranca" placeholder="CVV">
+    </div>
+
+    <button class="mt-3 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            onclick="adicionarCartao()">
+        Adicionar Cartão
+    </button>
+
+    <hr class="my-4">
+
+    <!-- CUPOM -->
+    <h2 class="text-xl font-bold mb-2">Descontos</h2>
+
+    <div class="grid grid-cols-2 gap-3">
+        <input class="border p-2 rounded" type="text" id="cupom" placeholder="Cupom de desconto">
+    </div>
+
+    <hr class="my-4">
+
+    <!-- RESUMO -->
+    <h2 class="text-xl font-bold mb-2">Resumo</h2>
+
+    <p>Frete: <span class="font-semibold">R$ <span id="frete">0</span></span></p>
+    <p>Total: <span class="font-semibold text-green-600">R$ <span id="total">0</span></span></p>
+
+    <button class="mt-4 w-full bg-purple-600 text-white py-3 rounded-lg text-lg hover:bg-green-700"
+            onclick="finalizarCompra()">
+        Finalizar Compra
+    </button>
+
+    <p class="mt-2 text-sm">Status Pedido: <span id="statusPedido"></span></p>
+
+</div>
+
+<script src="/js/perfil.js"></script>
+
+</body>
+</html>

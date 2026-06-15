@@ -1,0 +1,166 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: aqua;
+    color: blue;
+
+    padding: 15px 20px;
+}
+
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.logo span{
+    color: white;
+   }
+
+#nav-menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+#nav-menu li {
+    cursor: pointer;
+}
+.user-info {
+    font-weight: bold;
+}
+
+.btn-sair {
+    background-color: blue;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+
+        background-color: blue;
+        width: 200px;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+   }
+    .search-container{
+        display:flex;
+        margin: 0 30px;
+        align-items:center;
+        background:white;
+        border-radius:25px;
+        border:1px solid #ccc;
+        overflow:hidden;
+        width:320px;
+    }
+
+    #searchInput{
+        flex:1;
+        padding:8px 15px;
+        border:none;
+        outline:none;
+    }
+
+    .search-button{
+        background:blue;
+        color:white;
+        border:none;
+        padding:8px 15px;
+        cursor:pointer;
+    }
+
+    #cupom, #cupomTroca {
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        margin: 8px 0;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    /* foco (quando clica) */
+    #cupom:focus, #cupomTroca:focus {
+        border-color: aqua;
+        outline: none;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    }
+
+
+    button {
+        background: linear-gradient(135deg, #4CAF50, #2e7d32);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        margin-top: 15px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+
+    button:hover {
+        background: linear-gradient(135deg, #66bb6a, #1b5e20);
+        transform: scale(1.03);
+    }
+
+
+    button:active {
+        transform: scale(0.98);
+    }
+
+
+    #frete, #total {
+        font-weight: bold;
+        font-size: 18px;
+        color: #2e7d32;
+    }
+
+
+    #statusPedido {
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input {
+        border: 3px solid aqua;
+    }

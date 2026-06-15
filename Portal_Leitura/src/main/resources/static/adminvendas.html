@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Vendas</title>
+
+    <link rel="stylesheet" href="Styles/adminvendas.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <aside class="sidebar" id="sidebar">
+
+        <h2>Admin</h2>
+
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="admin.html">Clientes</a></li>
+            <li><a href="livro.html">Livros</a></li>
+            <li><a href="adminvendas.html">Pedidos</a></li>
+            <li><a href="trocas.html">Trocas</a></li>
+            <li><a href="#">Estoque</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </button>
+
+        <h1>Painel de Vendas</h1>
+
+        <input
+                type="text"
+                id="buscar"
+                placeholder="Buscar Pedido..."
+        >
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Livros</th>
+                <th>Endereço Entrega</th>
+                <th>Status</th>
+                <th>Cupons Utilizados</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody id="lista-clientes">
+            </tbody>
+        </table>
+
+    </main>
+
+</div>
+
+<script src="/js/adminvendas.js"></script>
+
+</body>
+</html>

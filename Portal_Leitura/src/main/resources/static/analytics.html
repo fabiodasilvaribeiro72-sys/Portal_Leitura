@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Portal Leitura</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="Styles/admin.css">
+    <link rel="stylesheet" href="Styles/analytics.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i data-lucide="book-open" class="logo-icon"></i>
+            <h2>Portal Leitura</h2>
+        </div>
+        <div class="user-profile-summary">
+            <div class="avatar">AD</div>
+            <div class="user-info">
+                <span class="user-name">Administrador</span>
+                <span class="user-role">Painel de Controle</span>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#"><i data-lucide="layout-dashboard"></i> Dashboard</a></li>
+            <li><a href="admin.html"><i data-lucide="users"></i> Clientes</a></li>
+            <li><a href="livro.html"><i data-lucide="book"></i> Livros</a></li>
+            <li><a href="adminvendas.html"><i data-lucide="shopping-cart"></i> Pedidos</a></li>
+            <li><a href="trocas.html"><i data-lucide="arrow-left-right"></i> Trocas</a></li>
+            <li><a href="#"><i data-lucide="package"></i> Estoque</a></li>
+            <li class="active"><a href="analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="content-header">
+            <div class="header-left">
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div class="title-area">
+                    <h1>Dashboard de Vendas</h1>
+                    <p class="subtitle">Análise de desempenho comercial e tendências de compra</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="current-date-badge">
+                    <i data-lucide="calendar"></i>
+                    <span id="current-date-text">Junho, 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filters Section -->
+        <section class="filters-card">
+            <div class="filters-header">
+                <div class="filter-title">
+                    <i data-lucide="sliders-horizontal"></i>
+                    <h3>Filtros de Análise</h3>
+                </div>
+                <button class="btn-clear-filters" id="btn-limpar-filtros">
+                    <i data-lucide="rotate-ccw"></i> Limpar Filtros
+                </button>
+            </div>
+            <div class="filters-grid">
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <label for="filtro-categoria">Categorias</label>
+                    <div class="custom-select-wrapper">
+                        <select id="filtro-categoria" multiple>
+                            <!-- Dynamically loaded -->
+                        </select>
+                        <span class="select-helper-text">Mantenha Ctrl/Cmd pressionado para selecionar múltiplas</span>
+                    </div>
+                </div>
+
+                <!-- Date Range Filters -->
+                <div class="filter-group">
+                    <label>Período Personalizado</label>
+                    <div class="date-range-inputs">
+                        <div class="date-input-wrapper">
+                            <span class="date-label">De</span>
+                            <input type="date" id="data-inicio">
+                        </div>
+                        <div class="date-input-wrapper">
+                            <span class="date-label">Até</span>
+                            <input type="date" id="data-fim">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grouping and Preset Filter -->
+                <div class="filter-group">
+                    <label for="agrupamento-periodo">Agrupar por</label>
+                    <div class="select-group">
+                        <select id="agrupamento-periodo">
+                            <option value="dias">Dias</option>
+                            <option value="meses" selected>Meses</option>
+                            <option value="anos">Anos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Dashboard Cards -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon-wrapper sales">
+                        <i data-lucide="shopping-bag"></i>
+                    </div>
+                    <span class="kpi-title">Total de Livros Vendidos</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 class="kpi-value" id="kpi-total-vendas">0</h2>
+                    <span class="kpi-trend trend-up" id="trend-vendas">
+                        <i data-lucide="arrow-up-right"></i> <span id="trend-vendas-text">--</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon-wrapper revenue">
+                        <i data-lucide="dollar-sign"></i>
+                    </div>
+                    <span class="kpi-title">Faturamento Bruto</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 class="kpi-value" id="kpi-faturamento">R$ 0,00</h2>
+                    <span class="kpi-trend trend-up" id="trend-faturamento">
+                        <i data-lucide="arrow-up-right"></i> <span id="trend-faturamento-text">--</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon-wrapper orders">
+                        <i data-lucide="receipt"></i>
+                    </div>
+                    <span class="kpi-title">Quantidade de Pedidos</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 class="kpi-value" id="kpi-total-pedidos">0</h2>
+                    <span class="kpi-trend trend-up" id="trend-pedidos">
+                        <i data-lucide="arrow-up-right"></i> <span id="trend-pedidos-text">--</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon-wrapper ticket">
+                        <i data-lucide="tags"></i>
+                    </div>
+                    <span class="kpi-title">Ticket Médio por Pedido</span>
+                </div>
+                <div class="kpi-body">
+                    <h2 class="kpi-value" id="kpi-ticket-medio">R$ 0,00</h2>
+                    <span class="kpi-trend" id="trend-ticket">
+                        <i data-lucide="minus"></i> <span id="trend-ticket-text">Estável</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chart Card -->
+        <section class="chart-container-card">
+            <div class="chart-card-header">
+                <div class="chart-title-group">
+                    <h3>Evolução das Vendas (Últimos 13 Meses)</h3>
+                    <p class="chart-subtitle" id="chart-range-description">Exibindo volume de vendas mensais de livros de maio de 2025 a junho de 2026</p>
+                </div>
+                <div class="chart-actions">
+                    <div class="chart-toggle-buttons">
+                        <button class="chart-toggle-btn active" id="btn-chart-quantity" title="Mostrar Quantidade Vendida">
+                            <i data-lucide="hash"></i> Qtd. Livros
+                        </button>
+                        <button class="chart-toggle-btn" id="btn-chart-revenue" title="Mostrar Faturamento">
+                            <i data-lucide="dollar-sign"></i> Faturamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="vendasChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Top Selling Books and Category Summary -->
+        <section class="dashboard-details-grid">
+            <!-- Table of Sales Summary -->
+            <div class="details-card">
+                <div class="card-header-simple">
+                    <h3>Resumo de Vendas por Categoria</h3>
+                    <p>Total vendido por gênero literário no período selecionado</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="analytics-table">
+                        <thead>
+                        <tr>
+                            <th>Categoria</th>
+                            <th>Livros Vendidos</th>
+                            <th>Faturamento (R$)</th>
+                            <th>Participação (%)</th>
+                        </tr>
+                        </thead>
+                        <tbody id="lista-resumo-categorias">
+                        <!-- Dynamically populated -->
+                        <tr>
+                            <td colspan="4" class="no-data-cell">Nenhum dado encontrado para o período filtrado.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Top Selling Books list -->
+            <div class="details-card">
+                <div class="card-header-simple">
+                    <h3>Livros Mais Vendidos</h3>
+                    <p>Ranking dos títulos preferidos pelos leitores</p>
+                </div>
+                <div class="top-books-list" id="lista-livros-ranking">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="js/analytics.js"></script>
+</body>
+</html>

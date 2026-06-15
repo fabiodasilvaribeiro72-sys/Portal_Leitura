@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente </title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body id ="clientecadastro">
+
+     <div class ="navbar">
+
+    <div class ="header-inner-content">
+        
+        <h1  class="logo">Portal <span>Leitura</span></h1>
+    </div>        
+</div>
+
+    <div class ="container">
+    <div class ="form-image">
+        <img src="imagens/undraw_education_3vwh.svg">
+    </div>
+        <form onsubmit="cadastrar(event)">
+
+        <div class ="form-header">
+            <div class ="title">
+                <h1>Cadastre-se</h1>
+
+            </div>
+
+            <div class="login-button">
+                <button onclick="irParaLogin()">Entrar</button>
+            </div>
+        </div>
+        <div class="input-group">
+
+            <div class ="input-box">
+                <label for ="nome">Nome</label>
+                <input id= "nome" type ="text" name ="nome" placeholder="Digite seu nome Completo" required>
+
+            </div>
+            <div class ="input-box">
+                <label for ="email">E-mail</label>
+                <input id= "email" type ="email" name ="email" placeholder="Digite seu e-mail" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="cpf">Cpf</label>
+                <input id="cpf" type="text" name="cpf" maxlength="14" placeholde ="000.000.000-00" required>
+
+
+            </div>
+
+
+            <div class ="input-box">
+                <label for ="telefone">Telefone</label>
+                <input id= "telefone" type ="tel" name ="telefone" placeholder="(xx) xxxxx-xxxx" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="senha">Senha</label>
+                <input id= "senha" type ="password" name ="senha" placeholder="Digite senha" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="confirmesenha">Confirme sua senha</label>
+                <input id= "confirmesenha" type ="password" name ="confirmesenha" placeholder="Digite senha" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="logradouroEntrega">Rua</label>
+                <input id= "logradouroEntrega" type ="text" name = "enderecosEntrega[0].logradouro" placeholder="Digite a rua" autocomplete="street-address" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="bairroEntrega">Bairro</label>
+                <input id= "bairroEntrega" type ="text" name = "enderecosEntrega[0].bairro" placeholder="Informe o seu bairro"  required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="cidadeEntrega">Cidade</label>
+                <input id= "cidadeEntrega" type ="text" name = "enderecosEntrega[0].cidade" placeholder="Digite a Cidade" autocomplete="street-address" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="estadoEntrega">UF</label>
+                <input id= "estadoEntrega" type ="text" name = "enderecosEntrega[0].estado" maxlength="2" placeholder="Informe o estado"  required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="cepEntrega">Cep</label>
+                <input id= "cepEntrega" type ="text" name = "enderecosEntrega[0].cep" placeholder="00000-000" maxlength="9" required>
+
+            </div>
+
+
+
+
+            <div class ="input-box">
+                <label for ="numeroEntrega">Numero</label>
+                <input id= "numeroEntrega" type ="text" name ="enderecosEntrega[0].numero" placeholder="Nº" autocomplete="street-address" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="logradouroCobranca">Rua</label>
+                <input id= "logradouroCobranca" type ="text" name = "enderecosCobranca[0].logradouro" placeholder="Digite a rua" autocomplete="street-address" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="bairroCobranca">Bairro</label>
+                <input id= "bairroCobranca" type ="text" name = "enderecosCobranca[0].bairro" placeholder="Informe o bairro" required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="cidadeCobranca">Cidade</label>
+                <input id= "cidadeCobranca" type ="text" name = "enderecosCobranca[0].cidade" placeholder="Digite a Cidade" autocomplete="street-address" required>
+
+            </div>
+
+
+            <div class ="input-box">
+                <label for ="estadoCobranca">UF</label>
+                <input id= "estadoCobranca" type ="text" name = "enderecosCobranca[0].estado" maxlength="2" placeholder="Informe o estado"  required>
+
+            </div>
+
+            <div class ="input-box">
+                <label for ="cepCobranca">Cep</label>
+                <input id= "cepCobranca" type ="text" name = "enderecosCobranca[0].cep" placeholder="00000-000" maxlength="9" required>
+
+            </div>
+
+
+
+            <div class ="input-box">
+                <label for ="numeroCobranca">Numero</label>
+                <input id= "numeroCobranca" type ="text" name ="enderecosCobranca[0].numero" placeholder="Nº" autocomplete="street-address" required>
+
+            </div>
+
+        </div>
+
+        <div class ="continue-button">
+            <button type="submit">Cadastrar</button>
+        </div>
+
+        </div>
+     </div>
+    </form>
+
+
+
+
+
+     <script>
+         function irParaLogin() {
+             window.location.href = "login.html";
+         }
+     </script>
+    <script src="js/salvarcliente.js"></script>
+    <script src="js/cadasto.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<h1>Seu Carrinho</h1>
+
+<div id="cart-items"></div>
+
+<h2>Total: R$ <span id="cart-total">0</span></h2>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const container = document.getElementById("cart-items");
+const totalElement = document.getElementById("cart-total");
+
+let total = 0;
+
+function renderCart(){
+
+container.innerHTML = "";
+total = 0;
+
+cart.forEach((item,index)=>{
+
+total += parseFloat(item.price);
+
+let div = document.createElement("div");
+
+div.innerHTML = `
+<img src="${item.image}" width="80">
+<h2>${item.name}</h2>
+<p>Preço: R$ ${item.price}</p>
+<button onclick="removeItem(${index})">Remover</button>
+<hr>
+`;
+
+container.appendChild(div);
+
+});
+
+totalElement.textContent = total.toFixed(2);
+
+}
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+renderCart();
+
+}
+
+renderCart();
+
+</script>

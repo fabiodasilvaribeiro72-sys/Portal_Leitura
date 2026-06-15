@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Leitura</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/chatbot.css">
+</head>
+<body>
+    <div class ="navbar">
+
+    <div class ="header-inner-content">
+        
+        <h1  class="logo">Portal <span>Leitura</span></h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar livros...">
+            <button class="search-button">🔍</button>
+        </div>
+    <nav>
+        
+        <ul>
+            <li>Home</li>
+            <li>Produtos</li>   
+            <li>Sobre</li>
+            <li>Contatos</li>
+            <li>Conta</li>
+
+
+
+        </ul>
+
+    </nav>
+    
+    <div class="nav-icon-container">
+
+        <div class="cart">
+            <img src="imagens/carrinho.png" alt="Carrinho">
+            <span id="cart-count">0</span>
+        </div>
+    
+        <img src="imagens/menu.png" alt="Menu" class="menu-button">
+    
+    </div>
+</div>
+</div>
+<header>
+    <div class="header-inner-content">
+        <div class ="header-bottom-side">
+            <div class ="header-bottom-side-left">
+                <h2>Ler abre portas para vários mundos</h2>
+                <p>
+                    Um dos maiores escritores russos de tododos os tempos.
+                </p>
+                <button>Ver agora &#8594;</button>
+            </div>
+            <div class ="header-bottom-side-right"></div>
+            <img src ="imagens/dostoievski.jpg" alt ="">
+        </div>
+
+    </div>
+
+
+</header>
+
+
+<!-- main content-->
+<main>
+    <div class ="gray-background">
+        <div class ="page-inner-content">
+            <div class="cols cols-3">
+    
+                    <img src="imagens/o idiota.jpg" class="active">
+                    <img src="imagens/irmaokaramasov.jpg">
+                    <img src="imagens/noitesbrancas.jpg">
+                </div>
+    
+
+        </div>
+    </div>
+    </div>
+    <div>
+        <div class ="page-inner-content">
+            <h3 class ="section-title"> Livros mais escolhidos</h3>
+            <div class ="subtitle-underline"></div>
+            <div class ="cols cols-4">
+                <div class = "livros">
+                    <img src ="imagens/buckoviski.jpg">
+                    <p class ="livro-nome">Factotum</p>
+                    <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class ="livro-preco"> 45,90<span>R$</span></p>
+                    <p class ="livro-genero">Ficção</p>
+                    <p class ="livro-autor">Charles Bukowski</p>
+                    <p class ="livro-isbn">ISBN: 9788577990641</p>
+                    <p class ="livro-ano"> Ano: 1975</p>
+                    <p class ="livro-edicao">Edição: 1</p>
+                    <p class ="livro-sinopse">Romance autobiográfico que acompanha a vida de Henry Chinaski,
+                        um anti-herói alcoólatra tentando sobreviver</p>
+                    <p class ="livro-paginas"> Número de páginas: 272</p>
+                    <p class ="livro-dimensoes">Dimensão:13.5 x 1.5 x 20.8 cm</p>
+
+                    <button class="buy-button"
+                    data-name ="Factotum"
+                    data-price = "45.90"
+                    data-image ="imagens/buckoviski.jpg"
+                    data-genero ="Ficcao"
+                    data-autor ="Charles Bukowski"
+                    data-isbn = "9788577990641"
+                            data-ano ="1975"
+                            data-edicao = "1"
+                            data-sinopse="Romance autobiográfico de Bukowski sobre a vida de Chinaski"
+                    data-pagina ="272"
+                    data-dimensoes ="13.5x1.5x20.8">
+
+
+
+
+                        Comprar</button>
+
+                </div>
+
+                <div class = "livros">
+                    <img src ="imagens/janeausten.jpg">
+                    <p class ="livro-nome">Orgulho e preconceito</p>
+                    <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class ="livro-preco"> 32,50<span> R$</span></p>
+                    <p class ="livro-genero">Drama de época/Romance</p>
+                    <p class ="livro-autor">Jane Austen</p>
+                    <p class ="livro-isbn">ISBN: 1050632048622</p>
+                    <p class ="livro-ano"> Ano: 1813</p>
+                    <p class ="livro-edicao">Edição: 2</p>
+                    <p class ="livro-sinopse">Orgulho e preconceito é o livro mais famoso de Jane Austen e possui uma série de personagens inesquecíveis e um enredo memorável</p>
+                    <p class ="livro-paginas"> Número de páginas: 424</p>
+                    <p class ="livro-dimensoes">Dimensão:21.4 x 13.6 x 2.8 cm </p>
+
+
+                    <button class="buy-button"
+                     data-name= "Orgulho e preconceito"
+                     data-price ="32.50"
+                     data-image="imagens/janeausten.jpg"
+                     data-genero ="Drama de epoca, Romance"
+                     data-isbn = "109877990532"
+                     data-ano="1813"
+                     data-edicao="2"
+                     data-sinopse="Orgulho e preconceito é o livro mais famoso de Jane Austen e possui uma série de personagens inesquecíveis e um enredo memorável"
+                     data-paginas="424"
+                     data-dimensoes="21.4x13.6x2.8">
+
+                     Comprar </button>
+
+                </div>
+
+                <div class = "livros">
+                    <img src ="imagens/codigo da vinci.jpg">
+                    <p class ="livro-nome">Codigo Da Vinci</p>
+                    <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class ="livro-preco"> 39,90<span> R$</span></p>
+                    <p class ="livro-genero">Policial/Thriller</p>
+                    <p class ="livro-autor">Dan Brown</p>
+                    <p class ="livro-isbn">ISBN: 9786555658118</p>
+                    <p class ="livro-ano"> Ano: 2003</p>
+                    <p class ="livro-edicao">Edição: 1</p>
+                    <p class ="livro-sinopse">Um assassinato no Museu do Louvre traz à tona uma sinistra conspiração para revelar um segredo que foi protegido por uma sociedade secreta desde os tempos de Jesus Cristo. A vítima é o curador do museu, Jacques Saunière, um dos líderes dessa fraternidade, o Priorado de Sião, que já teve como membros Leonardo da Vinci, Victor Hugo e Isaac Newton.</p>
+                    <p class ="livro-paginas"> Número de páginas: 432</p>
+                    <p class ="livro-dimensoes">Dimensão:16x2.5x23 </p>
+                    <p class ="livro-editora"> Editora: Arqueiro</p>
+
+
+
+                    <button class="buy-button"
+                    data-name= "Codigo da Vinci"
+                    data-price ="39.90"
+                    data-image = "imagens/codigo da vinci.jpg"
+                            data-genero ="Policial,Thriller"
+                            data-isbn = "9786555658118"
+                            data-ano="2003"
+                            data-edicao="1"
+                            data-sinopse="Um assassinato no Museu do Louvre traz à tona uma sinistra conspiração para revelar um segredo que foi protegido por uma sociedade secreta desde os tempos de Jesus Cristo. A vítima é o curador do museu, Jacques Saunière, um dos líderes dessa fraternidade, o Priorado de Sião, que já teve como membros Leonardo da Vinci, Victor Hugo e Isaac Newton"
+                            data-paginas="432"
+                            data-dimensoes="16x2.5x23"
+                            data-editora="Arqueiro">
+                    Comprar</button>
+
+                </div>
+
+                <div class = "livros">
+                    <img src ="imagens/fundacao.jpg">
+                    <p class ="livro-nome">Fundação</p>
+                    <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class ="livro-preco"> 42,00<span>R$</span></p>
+                    <p class ="livro-genero">Ficção</p>
+                    <p class ="livro-autor">Asimov</p>
+                    <p class ="livro-isbn">ISBN: 9788576571971</p>
+                    <p class ="livro-ano"> Ano: 1951</p>
+                    <p class ="livro-edicao">Edição: 5</p>
+                    <p class ="livro-sinopse">Obra-prima de Isaac Asimov, a trilogia da Fundação recebeu o histórico prêmio Hugo de Melhor série de ficção científica e fantasia de todos os tempos.</p>
+                    <p class ="livro-paginas"> Número de páginas: 880</p>
+                    <p class ="livro-dimensoes">Dimensão:23x16.4x5.4 cm </p>
+                    <p class ="livro-editora"> Editora: Aleph</p>
+
+                    <button class="buy-button"
+                    data-name= "Fundacao"
+                    data-price ="42.00"
+                    data-image="imagens/fundacao.jpg"
+                            data-genero ="Ficcao"
+                            data-isbn = "9788576571971"
+                            data-ano="1951"
+                            data-edicao="5"
+                            data-sinopse="Obra-prima de Isaac Asimov, a trilogia da Fundação recebeu o histórico prêmio Hugo de Melhor série de ficção científica e fantasia de todos os tempos"
+                            data-paginas="880"
+                            data-dimensoes="23x16.4x5.4"
+                            data-editora="Aleph">
+
+
+
+                    Comprar</button>
+            </div>
+
+            
+                    <div class = "livros">
+                        <img src ="imagens/fernando pessoa.jpg">
+                        <p class ="livro-nome">Poesias Completas</p>
+                        <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class ="livro-preco"> 55,00<span>R$</span></p>
+                        <p class ="livro-genero">Poesia</p>
+                        <p class ="livro-autor">Fernando Pessoa</p>
+                        <p class ="livro-isbn">ISBN: 9788535939538</p>
+                        <p class ="livro-ano"> Ano: 1951</p>
+                        <p class ="livro-edicao">Edição: 1</p>
+                        <p class ="livro-sinopse">A poesia de Álvaro de Campos tem espaço cativo no coração dos leitores de Fernando Pessoa, que por sua vez via neste heterônimo seu principal alter ego. A edição inclui posfácio inédito de Viviana Bosi.</p>
+                        <p class ="livro-paginas"> Número de páginas: 496</p>
+                        <p class ="livro-dimensoes">Dimensão:23x16.4x5.4 cm </p>
+                        <p class ="livro-editora"> Editora: Companhia das Letras</p>
+
+
+                        <button class="buy-button"
+                        data-name= "Poesias Completas"
+                        data-price ="55.00"
+                        data-image="imagens/fernando pessoa.jpg"
+                                data-genero ="Poesia"
+                                data-isbn = "9788535939538"
+                                data-ano="1935"
+                                data-edicao="1"
+                                data-sinopse="A poesia de Álvaro de Campos tem espaço cativo no coração dos leitores de Fernando Pessoa, que por sua vez via neste heterônimo seu principal alter ego. A edição inclui posfácio inédito de Viviana Bosi"
+                                data-paginas="496"
+                                data-dimensoes="23x16.4x5.4"
+                                data-editora="Companhia das Letras">
+
+
+                        Comprar</button>
+    
+                    </div>
+    
+                    <div class = "livros">
+                        <img src ="imagens/stevejobs.jpg">
+                        <p class ="livro-nome">Steve Jobs</p>
+                        <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class ="livro-preco"> 49,90<span> R$</span></p>
+                        <button class="buy-button"
+                        data-name="Steve Jobs"
+                        data-price="49.90"
+                        data-image="imagens/stevejobs.jpg">
+
+                                Comprar</button>
+    
+                    </div>
+    
+                    <div class = "livros">
+                        <img src ="imagens/rapido e devagar.jpg">
+                        <p class ="livro-nome">Rapido e Devagar</p>
+                        <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class ="livro-preco"> 52,90<span> R$</span></p>
+                        <button class="buy-button"
+                        data-name="Steve Jobs"
+                        data-price="52.90"
+                        data-image="imagens/rapido e devagar.jpg">Comprar</button>
+
+                    </div>
+    
+                    <div class = "livros">
+                        <img src ="imagens/pequeno principe.jpg">
+                        <p class ="livro-nome">O pequeno principe</p>
+                        <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                        <p class ="livro-preco"> 12,90<span>R$</span></p>
+                       <button class="buy-button"
+                        data-name="O pequeno principe"
+                        data-price="49.90"
+                        data-image="imagens/pequeno principe.jpg">Comprar</button>
+                        
+        </div>
+
+        <div id="side-cart" class="side-cart">
+
+            <div class="cart-header">
+                <h2>Seu Carrinho</h2>
+                <span id="close-cart">✖</span>
+            </div>
+        
+            <div id="cart-items"></div>
+        
+            <div class="cart-footer">
+                <h3>Total: R$ <span id="cart-total">0</span></h3>
+                <button id="btnFinalizar" class="checkout-btn"onclick="finalizarCompra()">Finalizar Compra</button>
+            </div>
+        
+        </div>
+        
+
+
+        
+
+    </div>
+
+
+
+
+<div class = "gray-background">
+    <div class="header-inner-content">>
+        <div class ="header-bottom-side box-container">
+            <div class ="header-bottom-side-left">
+                <h2>Ler abre portas para vários mundos</h2>
+                <p>
+                   As maiores e melhores sagas disponíveis para você. Box incrivéis, livro lindos e com preços exclusivos. Venha conferir. 
+                   Saga Harry Potter, Senhor dos anéis, Jogos Forazes, entre outros.  
+                </p>
+                <button>Ver agora &#8594;</button>
+            </div>
+            <div class ="header-bottom-side-right">
+            <img src ="imagens/box.jpg" alt ="">
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <div class="page-inner-content">
+        <div class ="comentarios">
+            <div class= "comentario">
+                <p>"</p>
+                <p>Site maravilhoso, cheio de produtos incríveis em ofertas ótimas. Não canso de vir ver as opções de produtos
+
+                </p>
+                <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p> Jessica Santos </p>
+            </div>
+
+            <div class= "comentario">
+                <p>"</p>
+                <p>Muito bom, porém acredito que faltou uma variedade de autores. Mas no geral, não está ruim.
+                    Gostei das opções e qualidades dos livros.
+
+                </p>
+                <p class ="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                <p> Francisco Silva </p>
+            </div>
+
+            <div class= "comentario">
+                <p>"</p>
+                <p>Encantada com a oferta de livros disponíveis no site. Já estou recomendando para todos que conheço.
+                </p>
+                <p class ="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p >Maria Fernanda </p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</main>
+
+<footer class ="gray-background">
+    <div class ="page-inner-content footer-content" >
+        <div class="dowload-opcao">
+            <p> Baixe nossa aplicação</p>
+            <p> Baixe nossa aplicação para Android e ios</p>
+        </div>
+        <img src ="imagens/appstore.jpg" alt ="">
+        <img src = "imagens/playsotre.png" alt="">
+
+    </div>
+
+    <div class = "logo-footer">
+        <h1  class="logo">Portal <span>Leitura</span></h1>
+        <p>Nosso objetivo é contribuir para o aumento do número de pessoas a gostarem de Leitura
+            Por meio de ofertas que caibam no bolso, elas poderam adquirir livros incríveis melhorando seu desenvolvimento
+            Portal Leitura
+        </p>
+
+    </div>
+
+<div class ="links-footer">
+    <h3>Link úteiss</h3>
+    <ul>
+        <li>Cupons</li>
+        <li>Blog Post</li>
+        <li> Politicas</li>
+        <li> Torne-se afiliado</li>
+    </ul>
+</div>
+
+<hr class ="page-inner-content">
+
+<div class ="page-inner-content copyright" >
+    <p> Copyright 2026 - Portal Leitura - Todos os direitos reservados</p>
+
+</div>
+
+</footer>
+
+<script>
+    const navbar = document.querySelector(".navbar");
+    const menuButton = document.querySelector(".menu-button");
+
+    menuButton.addEventListener('click',() =>{
+        navbar.classList.toggle("show-menu");
+
+
+    });
+
+</script>
+
+    <div id="chat-container">
+
+        <div id="chat-header">
+
+            <span>📚 Assistente IA</span>
+
+            <span id="chat-close" onclick="toggleChat()">
+            ✕
+        </span>
+
+        </div>
+
+        <div id="chat-mensagens">
+
+            <div class="mensagem-bot">
+                Olá 👋<br>
+                Posso recomendar livros para você.
+            </div>
+
+        </div>
+
+        <div id="chat-input-area">
+
+            <input
+                    type="text"
+                    id="chat-input"
+                    placeholder="Pergunte sobre livros..."
+            >
+
+            <button
+                    id="chat-send"
+                    onclick="enviarMensagemChat()"
+            >
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+<script src ="js/chatbot.js"></script>
+<script src = "js/cart.js"></script>
+<script src = "js/search.js"></script>
+
+   
+</body>
+</html>
